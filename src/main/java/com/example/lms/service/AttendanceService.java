@@ -86,7 +86,7 @@ public class AttendanceService {
     private UserRepository userRepository;
 
     public Attendance recordAttendance(AttendanceDTO dto) {
-        // Check if the current user has permissions to mark attendance
+        
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         boolean isAuthorized = authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_HOD")) ||
                                authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_INSTRUCTOR"));

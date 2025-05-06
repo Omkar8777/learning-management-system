@@ -112,8 +112,8 @@ public class JwtUtil {
     @Value("${jwt.secret}")
     private String SECRET_KEY;
     
-    // Changed to a more reasonable expiration time (24 hours)
-    private final long jwtExpiration = 86400000; // 24 hours in milliseconds
+    
+    private final long jwtExpiration = 86400000; 
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
